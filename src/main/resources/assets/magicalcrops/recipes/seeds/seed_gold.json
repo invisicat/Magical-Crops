@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["#E#", "EWE", "#E#"],
+  "key": {
+    "#": {
+      "item": "minecraft:gold_ingot"
+    },
+    "E": {
+      "item": "magicalcrops:essence_Imperio"
+    },
+    "W": {
+      "item": "magicalcrops:seedMinicio"
+    }
+  },
+  "result": {
+    "item": "magicalcrops:seedGold",
+    "count": 1
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["###", "###", "###"],
+  "key": {
+    "#": {
+      "item": "magicalcrops:essence_Quartz"
+    }
+  },
+  "result": {
+    "item": "minecraft:quartz",
+    "count": 8
+  }
+}

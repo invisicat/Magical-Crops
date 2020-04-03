@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "magicalcrops:blocks/crops/croplapis_3"
+    }
+}

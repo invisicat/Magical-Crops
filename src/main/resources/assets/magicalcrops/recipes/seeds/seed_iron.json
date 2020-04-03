@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["#E#", "EWE", "#E#"],
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "E": {
+      "item": "magicalcrops:essence_Crucio"
+    },
+    "W": {
+      "item": "magicalcrops:seedMinicio"
+    }
+  },
+  "result": {
+    "item": "magicalcrops:seedIron",
+    "count": 1
+  }
+}

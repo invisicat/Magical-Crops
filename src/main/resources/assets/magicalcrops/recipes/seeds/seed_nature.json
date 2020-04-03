@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#E#",
+        "EWE",
+        "#E#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:reeds"
+        },
+        "E": {
+            "item": "magicalcrops:essence_Accio"
+        },
+        "W": {
+            "item": "magicalcrops:seedMinicio"
+        }
+    },
+    "result": {
+        "item": "magicalcrops:seedNature",
+        "count": 1
+    }
+}

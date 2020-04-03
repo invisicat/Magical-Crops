@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["###", "#@#", "###"],
+  "key": {
+    "#": {
+      "item": "magicalcrops:essence_Zivicio"
+    },
+    "@": {
+      "item": "magicalcrops:infusionstone_extreme",
+      "data": 32767
+    }
+  },
+  "result": {
+    "item": "magicalcrops:infusionstone_master",
+    "data": 0,
+    "count": 1
+  }
+}

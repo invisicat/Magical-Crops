@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["#E#", "EWE", "#E#"],
+  "key": {
+    "#": {
+      "item": "minecraft:quartz"
+    },
+    "E": {
+      "item": "magicalcrops:essence_Imperio"
+    },
+    "W": {
+      "item": "magicalcrops:seedNether"
+    }
+  },
+  "result": {
+    "item": "magicalcrops:seedQuartz",
+    "count": 1
+  }
+}

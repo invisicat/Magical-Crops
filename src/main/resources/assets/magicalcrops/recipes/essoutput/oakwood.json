@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["S# ", "## ", "   "],
+  "key": {
+    "#": {
+      "item": "magicalcrops:essence_Nature"
+    },
+    "S": {
+      "item": "magicalcrops:essence_Water"
+    }
+  },
+  "result": {
+    "item": "minecraft:LOG",
+    "data": 0,
+    "count": 8
+  }
+}

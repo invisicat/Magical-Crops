@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["###", "#@#", "###"],
+  "key": {
+    "#": {
+      "item": "magicalcrops:essence_Crucio"
+    },
+    "@": {
+      "item": "magicalcrops:infusionstone_regular",
+      "data": 32767
+    }
+  },
+  "result": {
+    "item": "magicalcrops:infusionstone_strong",
+    "data": 0,
+    "count": 1
+  }
+}

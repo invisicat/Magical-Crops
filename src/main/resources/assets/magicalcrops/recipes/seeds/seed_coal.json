@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["#E#", "EWE", "#E#"],
+  "key": {
+    "#": {
+      "item": "minecraft:coal",
+      "data": 0
+    },
+    "E": {
+      "item": "magicalcrops:essence_Accio"
+    },
+    "W": {
+      "item": "magicalcrops:seedMinicio"
+    }
+  },
+  "result": {
+    "item": "magicalcrops:seedCoal",
+    "count": 1
+  }
+}

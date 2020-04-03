@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["###", "#@#", "###"],
+  "key": {
+    "#": {
+      "item": "magicalcrops:essence_Imperio"
+    },
+    "@": {
+      "item": "magicalcrops:infusionstone_strong",
+      "data": 32767
+    }
+  },
+  "result": {
+    "item": "magicalcrops:infusionstone_extreme",
+    "data": 0,
+    "count": 1
+  }
+}

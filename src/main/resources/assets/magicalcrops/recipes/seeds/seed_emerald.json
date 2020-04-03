@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["#E#", "EWE", "#E#"],
+  "key": {
+    "#": {
+      "item": "minecraft:emerald"
+    },
+    "E": {
+      "item": "magicalcrops:essence_Zivicio"
+    },
+    "W": {
+      "item": "magicalcrops:seedMinicio"
+    }
+  },
+  "result": {
+    "item": "magicalcrops:seedEmerald",
+    "count": 1
+  }
+}

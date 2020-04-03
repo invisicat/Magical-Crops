@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["S# ", "#S ", "   "],
+  "key": {
+    "#": {
+      "item": "magicalcrops:essence_Fire"
+    },
+    "S": {
+      "item": "magicalcrops:essence_Earth"
+    }
+  },
+  "result": {
+    "item": "minecraft:sand",
+    "data": 0,
+    "count": 16
+  }
+}

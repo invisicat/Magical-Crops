@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["###", "#@#", "###"],
+  "key": {
+    "#": {
+      "item": "magicalcrops:essence_Accio"
+    },
+    "@": {
+      "item": "magicalcrops:infusionstone_weak",
+      "data": 32767
+    }
+  },
+  "result": {
+    "item": "magicalcrops:infusionstone_regular",
+    "data": 0,
+    "count": 1
+  }
+}

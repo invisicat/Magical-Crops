@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["###", "###", "###"],
+  "key": {
+    "#": {
+      "item": "magicalcrops:essence_Glowstone"
+    }
+  },
+  "result": {
+    "item": "minecraft:glowstone_dust",
+    "count": 8
+  }
+}

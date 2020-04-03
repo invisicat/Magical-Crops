@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["###", "###", "###"],
+  "key": {
+    "#": {
+      "item": "magicalcrops:essence_Experience"
+    }
+  },
+  "result": {
+    "item": "minecraft:experience_bottle",
+    "count": 4
+  }
+}

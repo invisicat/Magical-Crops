@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [" E ", "EWE", " E "],
+  "key": {
+    "E": {
+      "item": "magicalcrops:essence_imperio"
+    },
+    "W": {
+      "item": "magicalcrops:infusionstone_extreme"
+    }
+  },
+  "result": {
+    "item": "magicalcrops:essence_zivicio",
+    "count": 1
+  }
+}

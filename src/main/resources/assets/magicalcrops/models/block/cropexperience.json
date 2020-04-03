@@ -1,0 +1,6 @@
+{
+    "parent": "block/cross",
+    "textures": {
+        "cross": "magicalcrops:blocks/crops/cropexperience_3"
+    }
+}

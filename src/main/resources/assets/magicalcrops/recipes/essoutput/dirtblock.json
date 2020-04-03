@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["###", "# #", "###"],
+  "key": {
+    "#": {
+      "item": "magicalcrops:essence_Earth"
+    }
+  },
+  "result": {
+    "item": "minecraft:dirt",
+    "data": 0,
+    "count": 32
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["#E#", "EWE", "#E#"],
+  "key": {
+    "#": {
+      "item": "minecraft:glass_bottle"
+    },
+    "E": {
+      "item": "magicalcrops:essence_Accio"
+    },
+    "W": {
+      "item": "magicalcrops:seedMinicio"
+    }
+  },
+  "result": {
+    "item": "magicalcrops:seedAir",
+    "count": 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "   ",
+        "   "
+    ],
+    "key": {
+        "#": {
+            "item": "magicalcrops:essenceDye"
+        }
+    },
+    "result": {
+        "item": "minecraft:dye",
+        "data": 0,
+        "count": 3
+    }
+}

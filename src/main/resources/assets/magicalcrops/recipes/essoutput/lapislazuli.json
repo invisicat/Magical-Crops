@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["###", "###", "###"],
+  "key": {
+    "#": {
+      "item": "magicalcrops:essence_Lapis"
+    }
+  },
+  "result": {
+    "item": "minecraft:dye",
+    "data": 4,
+    "count": 8
+  }
+}

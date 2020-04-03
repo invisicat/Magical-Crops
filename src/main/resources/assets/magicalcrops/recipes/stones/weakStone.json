@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["###", "#@#", "###"],
+  "key": {
+    "#": {
+      "item": "magicalcrops:essence_Minicio"
+    },
+    "@": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "magicalcrops:infusionstone_weak",
+    "data": 0,
+    "count": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [" E ", "EWE", " E "],
+  "key": {
+    "E": {
+      "item": "magicalcrops:essence_accio"
+    },
+    "W": {
+      "item": "magicalcrops:infusionstone_regular"
+    }
+  },
+  "result": {
+    "item": "magicalcrops:essence_crucio",
+    "count": 1
+  }
+}

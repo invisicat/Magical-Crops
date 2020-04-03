@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["S# ", "#S ", "   "],
+  "key": {
+    "#": {
+      "item": "magicalcrops:essence_Earth"
+    },
+    "S": {
+      "item": "magicalcrops:essence_Water"
+    }
+  },
+  "result": {
+    "item": "minecraft:clay_ball",
+    "count": 16
+  }
+}
