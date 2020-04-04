@@ -1,1 +1,56 @@
 itemGroup.tabMagicalCrops=Magical Crops 
+
+
+item.seedair.name=Air Seeds
+item.seeddye.name=Dye Seeds
+item.seedcoal.name=Coal Seeds
+item.seedfire.name=Fire Seeds
+item.seedgold.name=Gold Seeds
+item.seediron.name=Iron Seeds
+item.seedearth.name=Earth Seeds
+item.seedlapis.name=Lapis Seeds
+item.seednature.name=Nature Seeds
+item.seednether.name=Nether Seeds
+item.seedquartz.name=Quartz Seeds
+item.seeddiamond.name=Diamond Seeds
+item.seedemerald.name=Emerald Seeds
+item.seedminicio.name=Minicio Seeds
+item.seedobsidian.name=Obsidian Seeds
+item.seedredstone.name=Redstone Seeds
+item.seedglowstone.name=Glowstone Seeds
+item.seedexperience.name=Experience Seeds
+item.seedwater.name=Water Seeds
+
+item.essence_ore.name=Essence Ore
+item.essence_air.name=Air Essence
+item.essence_dye.name=Dye Essence
+item.essence_coal.name=Coal Essence
+item.essence_fire.name=Fire Essence
+item.essence_gold.name=Gold Essence
+item.essence_iron.name=Iron Essence
+item.essence_accio.name=Accio Essence
+item.essence_earth.name=Earth Essence
+item.essence_lapis.name=Lapis Essence
+item.essence_water.name=Water Essence
+item.essence_crucio.name=Crucio Essence
+item.essence_nature.name=Nature Essence
+item.essence_nether.name=Nether Essence
+item.essence_quartz.name=Quartz Essence
+item.essence_diamond.name=Diamond Essence
+item.essence_emerald.name=Emerald Essence
+item.essence_imperio.name=Imperio Essence
+item.essence_minicio.name=Minicio Essence
+item.essence_zivicio.name=Zivicio Essence
+item.essence_obsidian.name=Obsidian Essence
+item.essence_redstone.name=Redstone Essence
+item.essence_glowstone.name=Glowstone Essence
+item.essence_experience.name=Experience Essence
+
+
+item.infusionstone_weak.name=Weak Infusionstone
+item.infusionstone_regular.name=Regular Infusionstone
+item.infusionstone_strong.name=Strong Infusionstone
+item.infusionstone_extreme.name=Extreme Infusionstone
+item.infusionstone_master.name=Master Infusionstone
+
+container.furnace_accio=Accio Furnace
