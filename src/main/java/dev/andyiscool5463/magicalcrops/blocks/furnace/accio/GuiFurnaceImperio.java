@@ -1,4 +1,4 @@
-package dev.andyiscool5463.magicalcrops.blocks.furnace;
+package dev.andyiscool5463.magicalcrops.blocks.furnace.accio;
 
 import dev.andyiscool5463.magicalcrops.Reference;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -6,14 +6,14 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 
-public class GuiDualFurnace extends GuiContainer{
+public class GuiFurnaceImperio extends GuiContainer{
 	
-	private static final ResourceLocation DUAL_FURNACE_TEXTURES = new ResourceLocation(Reference.MOD_ID + ":" + "textures/gui/container/accio_furnace_gui.png");
+	private static final ResourceLocation TEXTURES = new ResourceLocation(Reference.MOD_ID + ":" + "textures/gui/container/imperio_furnace_gui.png");
 	private final InventoryPlayer player;
-	private final TileEntityFurnace tileentity;
+	private final TileEntityFurnaceImperio tileentity;
 	
-	public GuiDualFurnace(InventoryPlayer player, TileEntityFurnace tileentity) {
-		super(new ContainerDualFurnace(player, tileentity));
+	public GuiFurnaceImperio(InventoryPlayer player, TileEntityFurnaceImperio tileentity) {
+		super(new ContainerFurnaceImperio(player, tileentity));
 		this.player = player;
 		this.tileentity = tileentity;
 	}
@@ -28,10 +28,10 @@ public class GuiDualFurnace extends GuiContainer{
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
 		GlStateManager.color(1.0f, 1.0f, 1.0f, 1.0f);
-		this.mc.getTextureManager().bindTexture(DUAL_FURNACE_TEXTURES);
+		this.mc.getTextureManager().bindTexture(TEXTURES);
 		this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
 		
-		if(TileEntityFurnace.isBurning(this.tileentity)) {
+		if(TileEntityFurnaceImperio.isBurning(this.tileentity)) {
 			int k = this.getBurnLeftScaled(13);
 			this.drawTexturedModalRect(this.guiLeft + 56, this.guiTop + 37 + 12 - k, 176, 12 - k, 14, k + 1);
 		}

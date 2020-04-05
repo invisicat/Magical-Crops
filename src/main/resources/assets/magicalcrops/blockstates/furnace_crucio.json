@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "burning=false,facing=north": {
+      "model": "magicalcrops:furnace_crucio"
+    },
+    "burning=false,facing=south": {
+      "model": "magicalcrops:furnace_crucio"
+    },
+    "burning=false,facing=east": {
+      "model": "magicalcrops:furnace_crucio"
+    },
+    "burning=false,facing=west": {
+      "model": "magicalcrops:furnace_crucio"
+    },
+    "burning=true,facing=north": {
+      "model": "magicalcrops:furnace_crucio"
+    },
+    "burning=true,facing=south": {
+      "model": "magicalcrops:furnace_crucio"
+    },
+    "burning=true,facing=east": {
+      "model": "magicalcrops:furnace_crucio"
+    },
+    "burning=true,facing=west": {
+      "model": "magicalcrops:furnace_crucio"
+    }
+  }
+}

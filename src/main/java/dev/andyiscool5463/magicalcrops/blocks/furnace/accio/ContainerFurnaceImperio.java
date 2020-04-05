@@ -1,4 +1,4 @@
-package dev.andyiscool5463.magicalcrops.blocks.furnace;
+package dev.andyiscool5463.magicalcrops.blocks.furnace.accio;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -10,22 +10,20 @@ import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ContainerDualFurnace extends Container {
+public class ContainerFurnaceImperio extends Container {
 	
-	private final TileEntityFurnace tileentity;
+	private final TileEntityFurnaceImperio tileentity;
 	
 	private int cookTime;
 	private int totalCookTime;
 	private int burnTime;
 	private int currentBurnTime;
-	private int sizeInventory;
 	public static final int INPUT_1 = 0, FUEL = 1, OUTPUT = 2;
-	public ContainerDualFurnace(InventoryPlayer player, TileEntityFurnace tileentity) {
+	public ContainerFurnaceImperio(InventoryPlayer player, TileEntityFurnaceImperio tileentity) {
 		this.tileentity = tileentity;
 		this.addSlotToContainer(new Slot(tileentity, 0, 56, 17));
 		this.addSlotToContainer(new SlotDualFurnaceFuel(tileentity, 2, 56, 53));
 		this.addSlotToContainer(new SlotDualFurnaceOutput(player.player, tileentity, 3, 116, 35));
-		this.sizeInventory = player.getSizeInventory();
 		// Player Inventory, Slot 9-35, Slot IDs 4-30
 	    for (int y = 0; y < 3; ++y) {
 	        for (int x = 0; x < 9; ++x) {
@@ -84,7 +82,6 @@ public class ContainerDualFurnace extends Container {
 	*/
 	@Override
     public ItemStack transferStackInSlot(EntityPlayer playerIn, int slotIndex) {
-		System.out.println("[Magical Crops] Slot Index: "+slotIndex);
 		ItemStack itemStack1 = ItemStack.EMPTY; // make the first stack null; we will copy it later
 		Slot slot = inventorySlots.get(slotIndex); // get the slots from GUI
 		if(slot != null && slot.getHasStack()) { // this checks to make sure the slot isnt null or empty
@@ -114,7 +111,7 @@ public class ContainerDualFurnace extends Container {
 					if(!mergeItemStack(itemStack2,INPUT_1,INPUT_1+1,false)) { // if it cant merge into the input slot
 						return ItemStack.EMPTY;
 					}
-				} else if(TileEntityFurnace.isItemFuel(itemStack2)) {
+				} else if(TileEntityFurnaceImperio.isItemFuel(itemStack2)) {
 					if(!mergeItemStack(itemStack2, FUEL,FUEL+1, false)) { 
 						return ItemStack.EMPTY;
 					} /* Player Inventory Slots */

@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "magicalcrops:items/tutorial_apple"
+        "layer0": "magicalcrops:items/furnace_flower_crucio"
      },
      
     "display": {

@@ -1,8 +1,9 @@
-package dev.andyiscool5463.magicalcrops.blocks.furnace;
+package dev.andyiscool5463.magicalcrops.blocks.furnace.accio;
 
 import java.util.Random;
 
 import dev.andyiscool5463.magicalcrops.Reference;
+import dev.andyiscool5463.magicalcrops.TutorialGuiHandler;
 import dev.andyiscool5463.magicalcrops.init.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
@@ -30,16 +31,16 @@ import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class BlockFurnace extends BlockBush implements ITileEntityProvider {
+public class BlockFurnaceAccio extends BlockBush implements ITileEntityProvider {
 	
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	public static final PropertyBool BURNING = PropertyBool.create("burning");
 	
-	public BlockFurnace() {
+	public BlockFurnaceAccio(CreativeTabs tab) {
 		super(Material.ROCK, MapColor.GRAY);
 		setUnlocalizedName("furnace_accio");
 		setRegistryName("furnace_accio");
-		setCreativeTab(CreativeTabs.DECORATIONS);
+		setCreativeTab(tab);
 		setHardness(3.5F);
 		setHarvestLevel("pickaxe", 1);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(BURNING, false));
@@ -110,7 +111,7 @@ public class BlockFurnace extends BlockBush implements ITileEntityProvider {
 
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
-		return new TileEntityFurnace();
+		return new TileEntityFurnaceAccio();
 	}
 	
 	@Override
@@ -120,7 +121,7 @@ public class BlockFurnace extends BlockBush implements ITileEntityProvider {
 	
 	@Override
 	public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
-		TileEntityFurnace tileentity = (TileEntityFurnace)worldIn.getTileEntity(pos);
+		TileEntityFurnaceAccio tileentity = (TileEntityFurnaceAccio)worldIn.getTileEntity(pos);
 		InventoryHelper.dropInventoryItems(worldIn, pos, tileentity);
 		super.breakBlock(worldIn, pos, state);
 	}

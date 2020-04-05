@@ -2,8 +2,16 @@ package dev.andyiscool5463.magicalcrops.init;
 
 import dev.andyiscool5463.magicalcrops.Reference;
 import dev.andyiscool5463.magicalcrops.blocks.crops.CropBase;
-import dev.andyiscool5463.magicalcrops.blocks.furnace.BlockFurnace;
-import dev.andyiscool5463.magicalcrops.blocks.furnace.TileEntityFurnace;
+import dev.andyiscool5463.magicalcrops.blocks.furnace.accio.BlockFurnaceAccio;
+import dev.andyiscool5463.magicalcrops.blocks.furnace.accio.BlockFurnaceCrucio;
+import dev.andyiscool5463.magicalcrops.blocks.furnace.accio.BlockFurnaceImperio;
+import dev.andyiscool5463.magicalcrops.blocks.furnace.accio.BlockFurnaceUltimate;
+import dev.andyiscool5463.magicalcrops.blocks.furnace.accio.BlockFurnaceZivicio;
+import dev.andyiscool5463.magicalcrops.blocks.furnace.accio.TileEntityFurnaceAccio;
+import dev.andyiscool5463.magicalcrops.blocks.furnace.accio.TileEntityFurnaceCrucio;
+import dev.andyiscool5463.magicalcrops.blocks.furnace.accio.TileEntityFurnaceImperio;
+import dev.andyiscool5463.magicalcrops.blocks.furnace.accio.TileEntityFurnaceUltimate;
+import dev.andyiscool5463.magicalcrops.blocks.furnace.accio.TileEntityFurnaceZivicio;
 import dev.andyiscool5463.magicalcrops.items.seeds.SeedBase;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -24,6 +32,7 @@ import net.minecraftforge.oredict.OreDictionary;
 @Mod.EventBusSubscriber(modid=Reference.MOD_ID)
 public class ModBlocks {
 
+	
 	static Block minicioCrop;
 	static Block BlockCropAir;
 	static Block BlockCropCoal;
@@ -45,7 +54,11 @@ public class ModBlocks {
 	static Block BlockCropWater;
 	static Block BlockCropWither;
 	
-	public static Block BLOCK_FURNACE = new BlockFurnace();
+	public static Block BLOCK_FURNACE        = new BlockFurnaceAccio(ModItems.CreativeTab);
+	public static Block blockFurnaceCrucio   = new BlockFurnaceCrucio(ModItems.CreativeTab); 
+	public static Block blockFurnaceImperio  = new BlockFurnaceImperio(ModItems.CreativeTab); 
+	public static Block blockFurnaceUltimate = new BlockFurnaceUltimate(ModItems.CreativeTab);
+	public static Block blockFurnaceZivicio  = new BlockFurnaceZivicio(ModItems.CreativeTab); 
 	
 	public static void init() {
 		minicioCrop = new CropBase("cropminicio", ModItems.ItemSeedMinicio, ModItems.ItemEssenceMinicio);
@@ -93,7 +106,11 @@ public class ModBlocks {
 				BlockCropRedstone,
 				BlockCropWater,
 				BlockCropWither,
-				BLOCK_FURNACE
+				BLOCK_FURNACE,
+				blockFurnaceCrucio,
+				blockFurnaceImperio,
+				blockFurnaceUltimate,
+				blockFurnaceZivicio
 				);
 	}
 	
@@ -124,6 +141,10 @@ public class ModBlocks {
 		ModItems.ItemSeedWither = new SeedBase(ModBlocks.BlockCropWither, Blocks.FARMLAND, "seedwither").setCreativeTab(ModItems.CreativeTab);
 		
 		ModItems.ItemFurnaceAccio = new ItemBlock(BLOCK_FURNACE).setRegistryName("furnace_flower_accio").setUnlocalizedName("furnace_flower_accio");
+		ModItems.ItemFurnaceCrucio = new ItemBlock(blockFurnaceCrucio).setRegistryName("furnace_flower_crucio").setUnlocalizedName("furnace_flower_crucio");
+		ModItems.ItemFurnaceImperio = new ItemBlock(blockFurnaceImperio).setRegistryName("furnace_flower_imperio").setUnlocalizedName("furnace_flower_imperio");
+		ModItems.ItemFurnaceUltimate = new ItemBlock(blockFurnaceUltimate).setRegistryName("furnace_flower_ultimate").setUnlocalizedName("furnace_flower_ultimate");
+		ModItems.ItemFurnaceZivicio = new ItemBlock(blockFurnaceZivicio).setRegistryName("furnace_flower_zivicio").setUnlocalizedName("furnace_flower_zivicio");
 		event.getRegistry().registerAll(
 				ModItems.ItemSeedMinicio,
 				ModItems.ItemSeedAir,
@@ -145,7 +166,11 @@ public class ModBlocks {
 				ModItems.ItemSeedRedstone, 
 				ModItems.ItemSeedWater,
 				ModItems.ItemSeedWither,
-				ModItems.ItemFurnaceAccio
+				ModItems.ItemFurnaceAccio,
+				ModItems.ItemFurnaceCrucio,
+				ModItems.ItemFurnaceImperio,
+				ModItems.ItemFurnaceUltimate,
+				ModItems.ItemFurnaceZivicio
 				);
 		registerTileEntities();
 		registerOreDictionary();
@@ -153,7 +178,11 @@ public class ModBlocks {
 	}
 	
 	public static void registerTileEntities() {
-		GameRegistry.registerTileEntity(TileEntityFurnace.class, new ResourceLocation("furnace_accio"));
+		GameRegistry.registerTileEntity(TileEntityFurnaceAccio.class, new ResourceLocation("furnace_accio"));
+		GameRegistry.registerTileEntity(TileEntityFurnaceCrucio.class, new ResourceLocation("furnace_crucio"));
+		GameRegistry.registerTileEntity(TileEntityFurnaceImperio.class, new ResourceLocation("furnace_imperio"));
+		GameRegistry.registerTileEntity(TileEntityFurnaceUltimate.class, new ResourceLocation("furnace_ultimate"));
+		GameRegistry.registerTileEntity(TileEntityFurnaceZivicio.class, new ResourceLocation("furnace_zivicio"));
 	}
 	
 	@SubscribeEvent

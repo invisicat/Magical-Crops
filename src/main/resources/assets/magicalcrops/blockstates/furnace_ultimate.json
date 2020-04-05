@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "burning=false,facing=north": {
+      "model": "magicalcrops:furnace_ultimate"
+    },
+    "burning=false,facing=south": {
+      "model": "magicalcrops:furnace_ultimate"
+    },
+    "burning=false,facing=east": {
+      "model": "magicalcrops:furnace_ultimate"
+    },
+    "burning=false,facing=west": {
+      "model": "magicalcrops:furnace_ultimate"
+    },
+    "burning=true,facing=north": {
+      "model": "magicalcrops:furnace_ultimate"
+    },
+    "burning=true,facing=south": {
+      "model": "magicalcrops:furnace_ultimate"
+    },
+    "burning=true,facing=east": {
+      "model": "magicalcrops:furnace_ultimate"
+    },
+    "burning=true,facing=west": {
+      "model": "magicalcrops:furnace_ultimate"
+    }
+  }
+}

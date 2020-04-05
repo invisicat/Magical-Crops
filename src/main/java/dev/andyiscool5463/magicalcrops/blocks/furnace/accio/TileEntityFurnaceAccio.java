@@ -1,4 +1,4 @@
-package dev.andyiscool5463.magicalcrops.blocks.furnace;
+package dev.andyiscool5463.magicalcrops.blocks.furnace.accio;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -26,7 +26,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class TileEntityFurnace extends TileEntity implements IInventory, ITickable{
+public class TileEntityFurnaceAccio extends TileEntity implements IInventory, ITickable{
 	
 	private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(4, ItemStack.EMPTY);
 	private String customName;
@@ -184,7 +184,7 @@ public class TileEntityFurnace extends TileEntity implements IInventory, ITickab
 				this.cookTime = MathHelper.clamp(this.cookTime - 2, 0, this.totalCookTime);
 			if(flag != this.isBurning()) {
 				flag1 = true;
-				BlockFurnace.setState(this.isBurning(), this.world, this.pos);
+				BlockFurnaceAccio.setState(this.isBurning(), this.world, this.pos);
 			}
 		} if(flag1)
 			this.markDirty();
@@ -286,7 +286,7 @@ public class TileEntityFurnace extends TileEntity implements IInventory, ITickab
 	}
 	
 	public String getGuiID() {
-		return "tutorial:dual_furnace";
+		return "magicalcrops:furnace_accio";
 	}
 
 	@Override

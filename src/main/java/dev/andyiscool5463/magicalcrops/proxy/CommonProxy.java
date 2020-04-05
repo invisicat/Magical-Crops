@@ -2,7 +2,7 @@ package dev.andyiscool5463.magicalcrops.proxy;
 
 import dev.andyiscool5463.magicalcrops.MagicalCropsCore;
 import dev.andyiscool5463.magicalcrops.Reference;
-import dev.andyiscool5463.magicalcrops.blocks.furnace.TutorialGuiHandler;
+import dev.andyiscool5463.magicalcrops.TutorialGuiHandler;
 import dev.andyiscool5463.magicalcrops.init.ModBlocks;
 import dev.andyiscool5463.magicalcrops.init.ModItems;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;

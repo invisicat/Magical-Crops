@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "magicalcrops:blocks/furnace_flower_zivicio"
+  }
+}

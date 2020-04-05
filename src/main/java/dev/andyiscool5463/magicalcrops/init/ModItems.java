@@ -75,6 +75,10 @@ public class ModItems {
 	public static Item ItemSeedWither;
 	
 	public static Item ItemFurnaceAccio;
+	public static Item ItemFurnaceCrucio;
+	public static Item ItemFurnaceImperio;
+	public static Item ItemFurnaceUltimate;
+	public static Item ItemFurnaceZivicio;
 	
 	static Item ROCK;
 
@@ -207,6 +211,10 @@ public class ModItems {
 		registerRender(ItemSeedWither);
 
 		registerRender(ItemFurnaceAccio);
+		registerRender(ItemFurnaceCrucio);
+		registerRender(ItemFurnaceImperio);
+		registerRender(ItemFurnaceUltimate);
+		registerRender(ItemFurnaceZivicio);
 	}
 
 	private static void registerRender(Item item) {
