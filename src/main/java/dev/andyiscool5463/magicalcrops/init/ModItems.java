@@ -74,6 +74,8 @@ public class ModItems {
 	public static Item ItemSeedWater;
 	public static Item ItemSeedWither;
 	
+	public static Item ItemFurnaceAccio;
+	
 	static Item ROCK;
 
 	/*
@@ -204,6 +206,7 @@ public class ModItems {
 		registerRender(ItemSeedWater);
 		registerRender(ItemSeedWither);
 
+		registerRender(ItemFurnaceAccio);
 	}
 
 	private static void registerRender(Item item) {

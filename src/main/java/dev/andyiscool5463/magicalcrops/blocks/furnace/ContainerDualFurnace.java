@@ -18,17 +18,18 @@ public class ContainerDualFurnace extends Container {
 	private int totalCookTime;
 	private int burnTime;
 	private int currentBurnTime;
-	
+	private int sizeInventory;
+	public static final int INPUT_1 = 0, FUEL = 1, OUTPUT = 2;
 	public ContainerDualFurnace(InventoryPlayer player, TileEntityFurnace tileentity) {
 		this.tileentity = tileentity;
 		this.addSlotToContainer(new Slot(tileentity, 0, 56, 17));
 		this.addSlotToContainer(new SlotDualFurnaceFuel(tileentity, 2, 56, 53));
 		this.addSlotToContainer(new SlotDualFurnaceOutput(player.player, tileentity, 3, 116, 35));
-		
+		this.sizeInventory = player.getSizeInventory();
 		// Player Inventory, Slot 9-35, Slot IDs 4-30
 	    for (int y = 0; y < 3; ++y) {
 	        for (int x = 0; x < 9; ++x) {
-	            this.addSlotToContainer(new Slot(player, x + y * 9 + 9, 8 + x * 18, 84 + y * 18));
+	            this.addSlotToContainer(new Slot(player, x + y * 9 + 9, 8 + x 	* 18, 84 + y * 18));
 	        }
 	    }
 
@@ -78,45 +79,76 @@ public class ContainerDualFurnace extends Container {
 		return this.tileentity.isUsableByPlayer(playerIn);
 	}
 	
+	/**
+	* Called when a player shift-clicks on a slot. You must override this or you will crash when someone does that.
+	*/
 	@Override
-	public ItemStack transferStackInSlot(EntityPlayer playerIn, int index) {
-		ItemStack stack = ItemStack.EMPTY;
-		Slot slot = (Slot)this.inventorySlots.get(index);
-		
-		if(slot != null && slot.getHasStack()) {
-			ItemStack stack1 = slot.getStack();
-			stack = stack1.copy();
+    public ItemStack transferStackInSlot(EntityPlayer playerIn, int slotIndex) {
+		System.out.println("[Magical Crops] Slot Index: "+slotIndex);
+		ItemStack itemStack1 = ItemStack.EMPTY; // make the first stack null; we will copy it later
+		Slot slot = inventorySlots.get(slotIndex); // get the slots from GUI
+		if(slot != null && slot.getHasStack()) { // this checks to make sure the slot isnt null or empty
+			/*DEBUG*/ 
+			ItemStack itemStack2 = slot.getStack(); // this gets the stack that the user has grabbed
+			// System.out.println(mergeItemStack(itemStack2, sizeInventory, sizeInventory + 36, false)); 	DO NOT UNCOMMIT THIS SHIT FUCKING CRASHES SHIT FUCK FUCK
+			itemStack1 = itemStack2.copy(); // this copies the user's stack and puts it into the slot 
 			
-			if(index == 3) { // output
-				if(!this.mergeItemStack(stack1, 4, 40, true))
-					return ItemStack.EMPTY;
-				slot.onSlotChange(stack1, stack);
-			}
-			else if(index != 2 && index != 1 && index != 0) {
-				
-				Slot slot1 = (Slot)this.inventorySlots.get(index + 1);
-				
-				if(!FurnaceRecipes.instance().getSmeltingResult(stack1).isEmpty())
-					if(!this.mergeItemStack(stack1, 0, 2, false))
-						return ItemStack.EMPTY;
-				else if(TileEntityFurnace.isItemFuel(stack1))
-					if(!this.mergeItemStack(stack1, 2, 3, false))
-						return ItemStack.EMPTY;
-				else if(index >= 4 && index < 31)
-					if(!this.mergeItemStack(stack1, 31, 40, false))
-						return ItemStack.EMPTY;
-				else if(index >= 31 && index < 40 && !this.mergeItemStack(stack1, 4, 31, false))
-					return ItemStack.EMPTY;
-			} else if(!this.mergeItemStack(stack1, 4, 40, false))
+			if(slotIndex == INPUT_1 && !mergeItemStack(itemStack2, 3, 39, false)) { // THIS IS FOR INPUT -> INVENTORY
 				return ItemStack.EMPTY;
-			if(stack1.isEmpty())
+			}
+			if(slotIndex == FUEL && !mergeItemStack(itemStack2, 3, 39, false)) { // THIS IS FOR FUEL -> Inventory
+				return ItemStack.EMPTY;
+			}
+			if(slotIndex == OUTPUT) { // if the slot is the output
+				
+				if(!mergeItemStack(itemStack2, OUTPUT+1, 39, true)) { // this merges the stack that the user grabbed
+																						   // and puts it into our inventory in reverse order
+					                                                                       // though this checks for if it is NOT
+					return ItemStack.EMPTY; // nothing happens
+				}
+				
+				slot.onSlotChange(itemStack2, itemStack1);
+			}
+			else if(slotIndex != INPUT_1) { // checks if the index is not in the input
+				if(FurnaceRecipes.instance().getSmeltingResult(itemStack2) != ItemStack.EMPTY) { // checks if the user's stack is smeltable
+					if(!mergeItemStack(itemStack2,INPUT_1,INPUT_1+1,false)) { // if it cant merge into the input slot
+						return ItemStack.EMPTY;
+					}
+				} else if(TileEntityFurnace.isItemFuel(itemStack2)) {
+					if(!mergeItemStack(itemStack2, FUEL,FUEL+1, false)) { 
+						return ItemStack.EMPTY;
+					} /* Player Inventory Slots */
+				} else if(slotIndex >= 3 && slotIndex < 29) { // if the slot clicked is in the inventory not hotbar
+					 if (!mergeItemStack(itemStack2, 30, 38, false)) {
+	                        return ItemStack.EMPTY;
+	                 } //hot bar slot
+				} else if (slotIndex >= 30 && !mergeItemStack(itemStack2, 3, 29, false)) {
+					return ItemStack.EMPTY;
+                } else if (!mergeItemStack(itemStack2, 30, 38, false)) {
+                    return ItemStack.EMPTY;
+                }
+				
+				if (itemStack2.getCount() == 0) {
+                    slot.putStack(ItemStack.EMPTY);
+                }
+                else {
+                    slot.onSlotChanged();
+                }
+
+                if (itemStack2.getCount() == itemStack1.getCount()) {
+                    return ItemStack.EMPTY;
+                }
+			}
+			if(itemStack1.isEmpty())
 				slot.putStack(ItemStack.EMPTY);
 			else
 				slot.onSlotChanged();
-			if(stack1.getCount() == stack.getCount())
+			if(itemStack1.getCount() == itemStack2.getCount())
 				return ItemStack.EMPTY;
-			slot.onTake(playerIn, stack1);
+			slot.onTake(playerIn, itemStack1);
 		}
-		return stack;
-	}
+		
+		return itemStack1;
+		
+    }
 }

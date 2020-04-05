@@ -10,6 +10,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
@@ -122,7 +123,7 @@ public class ModBlocks {
 		ModItems.ItemSeedWater = new SeedBase(ModBlocks.BlockCropWater, Blocks.FARMLAND, "seedwater").setCreativeTab(ModItems.CreativeTab);
 		ModItems.ItemSeedWither = new SeedBase(ModBlocks.BlockCropWither, Blocks.FARMLAND, "seedwither").setCreativeTab(ModItems.CreativeTab);
 		
-		
+		ModItems.ItemFurnaceAccio = new ItemBlock(BLOCK_FURNACE).setRegistryName("furnace_flower_accio").setUnlocalizedName("furnace_flower_accio");
 		event.getRegistry().registerAll(
 				ModItems.ItemSeedMinicio,
 				ModItems.ItemSeedAir,
@@ -143,7 +144,8 @@ public class ModBlocks {
 				ModItems.ItemSeedQuartz,
 				ModItems.ItemSeedRedstone, 
 				ModItems.ItemSeedWater,
-				ModItems.ItemSeedWither
+				ModItems.ItemSeedWither,
+				ModItems.ItemFurnaceAccio
 				);
 		registerTileEntities();
 		registerOreDictionary();
@@ -151,7 +153,7 @@ public class ModBlocks {
 	}
 	
 	public static void registerTileEntities() {
-		GameRegistry.registerTileEntity(TileEntityFurnace.class, "furnace_accio");
+		GameRegistry.registerTileEntity(TileEntityFurnace.class, new ResourceLocation("furnace_accio"));
 	}
 	
 	@SubscribeEvent

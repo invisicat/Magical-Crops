@@ -40,12 +40,20 @@ public class BlockFurnace extends BlockBush implements ITileEntityProvider {
 		setUnlocalizedName("furnace_accio");
 		setRegistryName("furnace_accio");
 		setCreativeTab(CreativeTabs.DECORATIONS);
+		setHardness(3.5F);
+		setHarvestLevel("pickaxe", 1);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(BURNING, false));
 	}
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		return Item.getItemFromBlock(ModBlocks.BLOCK_FURNACE);
 	}
+	
+	@Override
+	public boolean canSustainBush(IBlockState state) {
+		return true;
+	}
+	
 	// this is used cause what the fuck forge u suck dick
 	@Override
 	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos) {
