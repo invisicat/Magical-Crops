@@ -14,7 +14,7 @@ apply plugin: 'eclipse'
 
 version = "1.0"
 group = "dev.andyiscool5463.magicalcrops" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "modid"
+archivesBaseName = "magicalcrops"
 
 sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 compileJava {

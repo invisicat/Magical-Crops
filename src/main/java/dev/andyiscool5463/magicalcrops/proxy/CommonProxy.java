@@ -5,6 +5,7 @@ import dev.andyiscool5463.magicalcrops.Reference;
 import dev.andyiscool5463.magicalcrops.TutorialGuiHandler;
 import dev.andyiscool5463.magicalcrops.init.ModBlocks;
 import dev.andyiscool5463.magicalcrops.init.ModItems;
+import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -35,5 +36,6 @@ public class CommonProxy {
 	}
 
 	public void serverStarting(FMLServerStartingEvent event) {
-	}
+	}	
+	public void registerItemRenderer(Item item, int meta, String id) {}
 }

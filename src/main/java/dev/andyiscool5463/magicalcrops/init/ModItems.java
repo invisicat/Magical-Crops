@@ -4,13 +4,18 @@ import dev.andyiscool5463.magicalcrops.Reference;
 import dev.andyiscool5463.magicalcrops.items.ItemBasic;
 import dev.andyiscool5463.magicalcrops.items.Infusionstones.*;
 import dev.andyiscool5463.magicalcrops.items.essence.*;
+import dev.andyiscool5463.magicalcrops.items.tools.ToolHoeBase;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
@@ -80,6 +85,30 @@ public class ModItems {
 	public static Item ItemFurnaceUltimate;
 	public static Item ItemFurnaceZivicio;
 	
+	public static Item ItemOreMinicio;
+	
+	
+	
+	public static Item ItemToolAccioHoe;
+	public static Item ItemToolAccioPickaxe;
+	public static Item ItemToolAccioSword;
+	public static Item ItemToolAccioSpade;
+	
+	public static Item ItemToolCrucioHoe;
+	public static Item ItemToolCrucioPickaxe;
+	public static Item ItemToolCrucioSword;
+	public static Item ItemToolCrucioSpade;
+	
+	public static Item ItemToolImperioHoe;
+	public static Item ItemToolImperioPickaxe;
+	public static Item ItemToolImperioSword;
+	public static Item ItemToolImperioSpade;
+	
+	public static Item ItemToolZivicioHoe;
+	public static Item ItemToolZivicioPickaxe;
+	public static Item ItemToolZivicioSword;
+	public static Item ItemToolZivicioSpade;
+	
 	static Item ROCK;
 
 	/*
@@ -132,6 +161,8 @@ public class ModItems {
 		ItemInfusionstoneStrong = new InfusionstoneStrong(CreativeTab);
 		ItemInfusionstoneExtreme = new InfusionstoneExtreme(CreativeTab);
 		ItemInfusionstoneMaster = new InfusionstoneMaster(CreativeTab);
+		final ToolMaterial ACCIO_TOOL = EnumHelper.addToolMaterial("accio_tool", 3, 10, 3.0F, 5.0F, 30);
+		ItemToolAccioHoe = new ToolHoeBase("tools_accio_hoe",ACCIO_TOOL,CreativeTab);
 	}
 
 	@SubscribeEvent
@@ -143,7 +174,7 @@ public class ModItems {
 				ItemEssenceGlowstone, ItemEssenceGold, ItemEssenceIron, ItemEssenceLapis, ItemEssenceNature,
 				ItemEssenceNether, ItemEssenceObsidian, ItemEssenceQuartz, ItemEssenceRedstone, ItemEssenceWater,
 				ItemInfusionstoneWeak, ItemInfusionstoneRegular, ItemInfusionstoneStrong, ItemInfusionstoneExtreme,
-				ItemInfusionstoneMaster, new Item().setRegistryName("essencedye"));
+				ItemInfusionstoneMaster, new Item().setRegistryName("essencedye"), ItemToolAccioHoe);
 	}
 	
 	@SubscribeEvent
@@ -215,8 +246,13 @@ public class ModItems {
 		registerRender(ItemFurnaceImperio);
 		registerRender(ItemFurnaceUltimate);
 		registerRender(ItemFurnaceZivicio);
+		
+		registerRender(ItemOreMinicio);
+		
+		registerRender(ItemToolAccioHoe);
 	}
-
+	
+	
 	private static void registerRender(Item item) {
 		ModelLoader.setCustomModelResourceLocation(item, 0,
 				new ModelResourceLocation(item.getRegistryName(), "inventory"));

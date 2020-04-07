@@ -8,12 +8,15 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.minecraftforge.event.world.BlockEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class CropBase extends BlockCrops {
 	public static final PropertyInteger CROP_AGE = PropertyInteger.create("age", 0, 7);
@@ -28,8 +31,7 @@ public class CropBase extends BlockCrops {
 		seed = Sseed;
 		drop = Ddrop;
 	}
-
-
+	
 	protected PropertyInteger getAgeProperty()
 	{
 		return CROP_AGE;
@@ -58,8 +60,7 @@ public class CropBase extends BlockCrops {
 		{
 			super.updateTick(worldIn, pos, state, rand);
 		}
-	}
-	
+	}	
 	public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn) {
 		entityIn.attackEntityFrom(DamageSource.CACTUS, 1.5F);
 	}

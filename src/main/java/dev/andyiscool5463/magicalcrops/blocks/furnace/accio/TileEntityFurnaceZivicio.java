@@ -6,6 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -16,6 +17,7 @@ import net.minecraft.item.ItemTool;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.MathHelper;
@@ -26,7 +28,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class TileEntityFurnaceZivicio extends TileEntity implements IInventory, ITickable{
+public class TileEntityFurnaceZivicio extends TileEntity implements IInventory, ITickable, ISidedInventory{
 	
 	private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(4, ItemStack.EMPTY);
 	private String customName;
@@ -191,7 +193,7 @@ public class TileEntityFurnaceZivicio extends TileEntity implements IInventory, 
 	}
 	
 	public int getCookTime(ItemStack input1, ItemStack input2) {
-		return 200;
+		return 200/8;
 	}
 	
 	private boolean canSmelt() {
@@ -227,6 +229,7 @@ public class TileEntityFurnaceZivicio extends TileEntity implements IInventory, 
 		}
 	}
 	
+	@SuppressWarnings("deprecation")
 	public static int getItemBurnTime(ItemStack fuel) {
 		if(fuel.isEmpty())
 			return 0;
@@ -330,5 +333,24 @@ public class TileEntityFurnaceZivicio extends TileEntity implements IInventory, 
 	@Override
 	public void clear() {
 		this.inventory.clear();
+	}
+	@Override
+	public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
+		// TODO Auto-generated method stub
+		if(index == 2) { // fuel i dunno i added +1  im so fucking confused???
+			return isItemFuel(itemStackIn);
+		} else if(index == 3) { //output
+			return false;
+		}
+		return (FurnaceRecipes.instance().getSmeltingResult(itemStackIn) != ItemStack.EMPTY);
+	}
+	@Override
+	public int[] getSlotsForFace(EnumFacing side) {
+		int[] a = {0,1,2,3};
+		return a;
+	}
+	@Override
+	public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
+		return index == 3;
 	}
 }

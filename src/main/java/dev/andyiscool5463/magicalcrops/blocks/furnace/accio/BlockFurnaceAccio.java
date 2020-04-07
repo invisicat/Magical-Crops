@@ -26,6 +26,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
@@ -45,6 +46,8 @@ public class BlockFurnaceAccio extends BlockBush implements ITileEntityProvider 
 		setHarvestLevel("pickaxe", 1);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(BURNING, false));
 	}
+	
+	
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		return Item.getItemFromBlock(ModBlocks.BLOCK_FURNACE);
@@ -98,9 +101,11 @@ public class BlockFurnaceAccio extends BlockBush implements ITileEntityProvider 
 		IBlockState state = worldIn.getBlockState(pos);
 		TileEntity tileentity = worldIn.getTileEntity(pos);
 		
-		if(active)
+		if(active) {
 			worldIn.setBlockState(pos, ModBlocks.BLOCK_FURNACE.getDefaultState().withProperty(FACING, state.getValue(FACING)).withProperty(BURNING, true), 3);
-		else
+			worldIn.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, pos.getX()+.5F, pos.getY()+.5F, pos.getZ()+.5F, 1, 1, 1);
+		
+		}else
 			worldIn.setBlockState(pos, ModBlocks.BLOCK_FURNACE.getDefaultState().withProperty(FACING, state.getValue(FACING)).withProperty(BURNING, false), 3);
 		
 		if(tileentity != null) {

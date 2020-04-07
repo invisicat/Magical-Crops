@@ -12,8 +12,10 @@ import dev.andyiscool5463.magicalcrops.blocks.furnace.accio.TileEntityFurnaceCru
 import dev.andyiscool5463.magicalcrops.blocks.furnace.accio.TileEntityFurnaceImperio;
 import dev.andyiscool5463.magicalcrops.blocks.furnace.accio.TileEntityFurnaceUltimate;
 import dev.andyiscool5463.magicalcrops.blocks.furnace.accio.TileEntityFurnaceZivicio;
+import dev.andyiscool5463.magicalcrops.blocks.ore.BlockOreBase;
 import dev.andyiscool5463.magicalcrops.items.seeds.SeedBase;
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -33,26 +35,28 @@ import net.minecraftforge.oredict.OreDictionary;
 public class ModBlocks {
 
 	
-	static Block minicioCrop;
-	static Block BlockCropAir;
-	static Block BlockCropCoal;
-	static Block BlockCropDiamond;
-	static Block BlockCropDye;
-	static Block BlockCropEarth;
-	static Block BlockCropEmerald;
-	static Block BlockCropExperience;
-	static Block BlockCropFire;
-	static Block BlockCropGlowstone;
-	static Block BlockCropGold;
-	static Block BlockCropIron;
-	static Block BlockCropLapis;
-	static Block BlockCropNature;
-	static Block BlockCropNether;
-	static Block BlockCropObsidian;
-	static Block BlockCropQuartz;
-	static Block BlockCropRedstone;
-	static Block BlockCropWater;
-	static Block BlockCropWither;
+	public static Block BlockCropMinicio;
+	public static Block BlockCropAir;
+	public static Block BlockCropCoal;
+	public static Block BlockCropDiamond;
+	public static Block BlockCropDye;
+	public static Block BlockCropEarth;
+	public static Block BlockCropEmerald;
+	public static Block BlockCropExperience;
+	public static Block BlockCropFire;
+	public static Block BlockCropGlowstone;
+	public static Block BlockCropGold;
+	public static Block BlockCropIron;
+	public static Block BlockCropLapis;
+	public static Block BlockCropNature;
+	public static Block BlockCropNether;
+	public static Block BlockCropObsidian;
+	public static Block BlockCropQuartz;
+	public static Block BlockCropRedstone;
+	public static Block BlockCropWater;
+	public static Block BlockCropWither;
+	
+	static Block BlockOreMinicio;
 	
 	public static Block BLOCK_FURNACE        = new BlockFurnaceAccio(ModItems.CreativeTab);
 	public static Block blockFurnaceCrucio   = new BlockFurnaceCrucio(ModItems.CreativeTab); 
@@ -61,7 +65,7 @@ public class ModBlocks {
 	public static Block blockFurnaceZivicio  = new BlockFurnaceZivicio(ModItems.CreativeTab); 
 	
 	public static void init() {
-		minicioCrop = new CropBase("cropminicio", ModItems.ItemSeedMinicio, ModItems.ItemEssenceMinicio);
+		BlockCropMinicio = new CropBase("cropminicio", ModItems.ItemSeedMinicio, ModItems.ItemEssenceMinicio);
 		BlockCropAir = new CropBase("cropair", ModItems.ItemSeedAir, ModItems.ItemEssenceAir);
 		BlockCropCoal = new CropBase("cropcoal", ModItems.ItemSeedAir, ModItems.ItemEssenceCoal);
 		BlockCropDiamond = new CropBase("cropdiamond", ModItems.ItemSeedDiamond, ModItems.ItemEssenceDiamond);
@@ -82,12 +86,13 @@ public class ModBlocks {
 		BlockCropWater = new CropBase("cropwater", ModItems.ItemSeedEarth, ModItems.ItemEssenceWater);
 		BlockCropWither = new CropBase("cropwither", ModItems.ItemSeedEarth, ModItems.ItemEssenceAccio); // fix
 		
+		BlockOreMinicio = new BlockOreBase("essenceore",Material.ROCK, ModItems.ItemEssenceMinicio).setCreativeTab(ModItems.CreativeTab);
 	}
 	
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
 		event.getRegistry().registerAll(
-				minicioCrop,
+				BlockCropMinicio,
 				BlockCropAir,
 				BlockCropCoal,
 				BlockCropDiamond,
@@ -110,7 +115,8 @@ public class ModBlocks {
 				blockFurnaceCrucio,
 				blockFurnaceImperio,
 				blockFurnaceUltimate,
-				blockFurnaceZivicio
+				blockFurnaceZivicio,
+				BlockOreMinicio
 				);
 	}
 	
@@ -118,7 +124,7 @@ public class ModBlocks {
 	public static void registerItemBlocks(RegistryEvent.Register<Item> event) {
 //		event.getRegistry().register(new ItemSeeds(ModBlocks.tutorialCrop, ModBlocks.tutorialBlock).setRegistryName("tutorial_seeds").setUnlocalizedName("tutorial_seeds")); Use this if you want a normal farmland seed.
 		
-		ModItems.ItemSeedMinicio = new SeedBase(ModBlocks.minicioCrop,Blocks.FARMLAND,"seedminicio").setCreativeTab(ModItems.CreativeTab);
+		ModItems.ItemSeedMinicio = new SeedBase(ModBlocks.BlockCropMinicio,Blocks.FARMLAND,"seedminicio").setCreativeTab(ModItems.CreativeTab);
 		ModItems.ItemSeedAir = new SeedBase(ModBlocks.BlockCropAir, Blocks.FARMLAND, "seedair").setCreativeTab(ModItems.CreativeTab);
 		ModItems.ItemSeedCoal = new SeedBase(ModBlocks.BlockCropCoal, Blocks.FARMLAND, "seedcoal").setCreativeTab(ModItems.CreativeTab);
 		ModItems.ItemSeedDiamond = new SeedBase(ModBlocks.BlockCropDiamond, Blocks.FARMLAND, "seeddiamond").setCreativeTab(ModItems.CreativeTab);
@@ -145,6 +151,9 @@ public class ModBlocks {
 		ModItems.ItemFurnaceImperio = new ItemBlock(blockFurnaceImperio).setRegistryName("furnace_flower_imperio").setUnlocalizedName("furnace_flower_imperio");
 		ModItems.ItemFurnaceUltimate = new ItemBlock(blockFurnaceUltimate).setRegistryName("furnace_flower_ultimate").setUnlocalizedName("furnace_flower_ultimate");
 		ModItems.ItemFurnaceZivicio = new ItemBlock(blockFurnaceZivicio).setRegistryName("furnace_flower_zivicio").setUnlocalizedName("furnace_flower_zivicio");
+		
+		ModItems.ItemOreMinicio = new ItemBlock(BlockOreMinicio).setRegistryName("essenceore").setUnlocalizedName("essenceore");
+		
 		event.getRegistry().registerAll(
 				ModItems.ItemSeedMinicio,
 				ModItems.ItemSeedAir,
@@ -170,7 +179,8 @@ public class ModBlocks {
 				ModItems.ItemFurnaceCrucio,
 				ModItems.ItemFurnaceImperio,
 				ModItems.ItemFurnaceUltimate,
-				ModItems.ItemFurnaceZivicio
+				ModItems.ItemFurnaceZivicio,
+				ModItems.ItemOreMinicio
 				);
 		registerTileEntities();
 		registerOreDictionary();
