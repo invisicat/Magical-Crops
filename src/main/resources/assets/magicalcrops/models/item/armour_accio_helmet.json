@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "magicalcrops:items/armour_accio_helmet"
+  }
+}

@@ -17,7 +17,10 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-
+/*
+ * The minicio crop in magical crops 
+ * grows very slow in the mod. It also does not react to bonemeal
+ * */
 public class CropBase extends BlockCrops {
 	public static final PropertyInteger CROP_AGE = PropertyInteger.create("age", 0, 7);
 	public final Item seed;
@@ -66,7 +69,7 @@ public class CropBase extends BlockCrops {
 	}
 	protected int getBonemealAgeIncrease(World worldIn)
 	{
-		return MathHelper.getInt(worldIn.rand, 1, 3);
+		return MathHelper.getInt(worldIn.rand, 1, 2);
 	}
 
 	protected BlockStateContainer createBlockState()
