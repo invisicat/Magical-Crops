@@ -33,6 +33,7 @@ import dev.andyiscool5463.magicalcrops.items.essence.EssenceRedstone;
 import dev.andyiscool5463.magicalcrops.items.essence.EssenceWater;
 import dev.andyiscool5463.magicalcrops.items.essence.EssenceZivicio;
 import dev.andyiscool5463.magicalcrops.items.tools.ToolHoeBase;
+import dev.andyiscool5463.magicalcrops.registry.ArmorRegistry;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.SoundEvents;
@@ -116,65 +117,7 @@ public class ModItems {
 
 	public static Item ItemOreMinicio;
 
-	public static Item ItemToolAccioHoe;
-	public static Item ItemToolAccioPickaxe;
-	public static Item ItemToolAccioSword;
-	public static Item ItemToolAccioSpade;
-
-	public static Item ItemToolCrucioHoe;
-	public static Item ItemToolCrucioPickaxe;
-	public static Item ItemToolCrucioSword;
-	public static Item ItemToolCrucioSpade;
-
-	public static Item ItemToolImperioHoe;
-	public static Item ItemToolImperioPickaxe;
-	public static Item ItemToolImperioSword;
-	public static Item ItemToolImperioSpade;
-
-	public static Item ItemToolZivicioHoe;
-	public static Item ItemToolZivicioPickaxe;
-	public static Item ItemToolZivicioSword;
-	public static Item ItemToolZivicioSpade;
-
-	public static Item ItemArmorAccioHelmet;
-	public static Item ItemArmorCrucioHelmet;
-	public static Item ItemArmorImperioHelmet;
-	public static Item ItemArmorZivicioHelmet;
-
-	public static Item ItemArmorAccioChestplate;
-	public static Item ItemArmorCrucioChestplate;
-	public static Item ItemArmorImperioChestplate;
-	public static Item ItemArmorZivicioChestplate;
-
-	public static Item ItemArmorAccioLeggings;
-	public static Item ItemArmorCrucioLeggings;
-	public static Item ItemArmorImperioLeggings;
-	public static Item ItemArmorZivicioLeggings;
-
-	public static Item ItemArmorAccioBoots;
-	public static Item ItemArmorCrucioBoots;
-	public static Item ItemArmorImperioBoots;
-	public static Item ItemArmorZivicioBoots;
-
 	static Item ROCK;
-
-	static final ArmorMaterial ACCIO_ARMOR = EnumHelper.addArmorMaterial("accio_armor",
-			Reference.MOD_ID + ":accio_armour", 9, new int[] { 3, 8, 7, 3 }, 15, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC,
-			1.5F);
-	static final ArmorMaterial CRUCIO_ARMOR = EnumHelper.addArmorMaterial("crucio_armor",
-			Reference.MOD_ID + ":crucio_armour", 9, new int[] { 4, 8, 7, 3 }, 20, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC,
-			1.5F);
-	static final ArmorMaterial IMPERIO_ARMOR = EnumHelper.addArmorMaterial("imperio_armor",
-			Reference.MOD_ID + ":imperio_armour", 9, new int[] { 4, 8, 7, 4 }, 25, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC,
-			1.5F);
-	static final ArmorMaterial ZIVICIO_ARMOR = EnumHelper.addArmorMaterial("zivicio_armor",
-			Reference.MOD_ID + ":zivicio_armour", 9, new int[] { 4, 9, 8, 3 }, 30, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC,
-			1.5F);
-
-	static final ToolMaterial ACCIO_TOOL = EnumHelper.addToolMaterial("accio_tool", 3, 10, 3.0F, 5.0F, 30);
-	static final ToolMaterial CRUCIO_TOOL = EnumHelper.addToolMaterial("crucio_tool", 3, 11, 3.0F, 5.0F, 30);
-	static final ToolMaterial IMPERIO_TOOL = EnumHelper.addToolMaterial("imperio_tool", 3, 12, 3.0F, 5.0F, 30);
-	static final ToolMaterial ZIVICIO_TOOL = EnumHelper.addToolMaterial("zivicio_tool", 3, -1, 3.0F, 5.0F, 30);
 
 	/*
 	 * Magical Crops Tab menu
@@ -226,46 +169,6 @@ public class ModItems {
 		ItemInfusionstoneExtreme = new InfusionstoneExtreme(CreativeTab);
 		ItemInfusionstoneMaster = new InfusionstoneMaster(CreativeTab);
 
-		ItemToolAccioHoe = new ToolHoeBase("tools_accio_hoe", ACCIO_TOOL, CreativeTab);
-		ItemToolCrucioHoe = new ToolHoeBase("tools_crucio_hoe", CRUCIO_TOOL, CreativeTab);
-		ItemToolImperioHoe = new ToolHoeBase("tools_imperio_hoe", IMPERIO_TOOL, CreativeTab);
-		ItemToolZivicioHoe = new ToolHoeBase("tools_zivicio_hoe", ZIVICIO_TOOL, CreativeTab);
-
-		ItemArmorAccioHelmet = new ItemAccioArmor(ACCIO_ARMOR, 0, EntityEquipmentSlot.HEAD, "armour_accio_helmet")
-				.setCreativeTab(CreativeTab);
-		ItemArmorAccioChestplate = new ItemAccioArmor(ACCIO_ARMOR, 1, EntityEquipmentSlot.CHEST,
-				"armour_accio_chestplate").setCreativeTab(CreativeTab);
-		ItemArmorAccioLeggings = new ItemAccioArmor(ACCIO_ARMOR, 2, EntityEquipmentSlot.LEGS, "armour_accio_leggings")
-				.setCreativeTab(CreativeTab);
-		ItemArmorAccioBoots = new ItemAccioArmor(ACCIO_ARMOR, 2, EntityEquipmentSlot.FEET, "armour_accio_boots")
-				.setCreativeTab(CreativeTab);
-
-		ItemArmorCrucioHelmet = new ItemCrucioArmor(CRUCIO_ARMOR, 0, EntityEquipmentSlot.HEAD, "armour_crucio_helmet")
-				.setCreativeTab(CreativeTab);
-		ItemArmorCrucioChestplate = new ItemCrucioArmor(CRUCIO_ARMOR, 1, EntityEquipmentSlot.CHEST,
-				"armour_crucio_chestplate").setCreativeTab(CreativeTab);
-		ItemArmorCrucioLeggings = new ItemCrucioArmor(CRUCIO_ARMOR, 2, EntityEquipmentSlot.LEGS,
-				"armour_crucio_leggings").setCreativeTab(CreativeTab);
-		ItemArmorCrucioBoots = new ItemCrucioArmor(CRUCIO_ARMOR, 2, EntityEquipmentSlot.FEET, "armour_crucio_boots")
-				.setCreativeTab(CreativeTab);
-
-		ItemArmorImperioHelmet = new ItemCrucioArmor(IMPERIO_ARMOR, 0, EntityEquipmentSlot.HEAD,
-				"armour_imperio_helmet").setCreativeTab(CreativeTab);
-		ItemArmorImperioChestplate = new ItemCrucioArmor(IMPERIO_ARMOR, 1, EntityEquipmentSlot.CHEST,
-				"armour_imperio_chestplate").setCreativeTab(CreativeTab);
-		ItemArmorImperioLeggings = new ItemCrucioArmor(IMPERIO_ARMOR, 2, EntityEquipmentSlot.LEGS,
-				"armour_imperio_leggings").setCreativeTab(CreativeTab);
-		ItemArmorImperioBoots = new ItemCrucioArmor(IMPERIO_ARMOR, 2, EntityEquipmentSlot.FEET, "armour_imperio_boots")
-				.setCreativeTab(CreativeTab);
-
-		ItemArmorZivicioHelmet = new ItemCrucioArmor(ZIVICIO_ARMOR, 0, EntityEquipmentSlot.HEAD,
-				"armour_zivicio_helmet").setCreativeTab(CreativeTab);
-		ItemArmorZivicioChestplate = new ItemCrucioArmor(ZIVICIO_ARMOR, 1, EntityEquipmentSlot.CHEST,
-				"armour_zivicio_chestplate").setCreativeTab(CreativeTab);
-		ItemArmorZivicioLeggings = new ItemCrucioArmor(ZIVICIO_ARMOR, 2, EntityEquipmentSlot.LEGS,
-				"armour_zivicio_leggings").setCreativeTab(CreativeTab);
-		ItemArmorZivicioBoots = new ItemCrucioArmor(ZIVICIO_ARMOR, 2, EntityEquipmentSlot.FEET, "armour_zivicio_boots")
-				.setCreativeTab(CreativeTab);
 	}
 
 	@SubscribeEvent
@@ -277,12 +180,22 @@ public class ModItems {
 				ItemEssenceGlowstone, ItemEssenceGold, ItemEssenceIron, ItemEssenceLapis, ItemEssenceNature,
 				ItemEssenceNether, ItemEssenceObsidian, ItemEssenceQuartz, ItemEssenceRedstone, ItemEssenceWater,
 				ItemInfusionstoneWeak, ItemInfusionstoneRegular, ItemInfusionstoneStrong, ItemInfusionstoneExtreme,
-				ItemInfusionstoneMaster, new Item().setRegistryName("essencedye"), ItemToolAccioHoe, ItemToolCrucioHoe,
-				ItemToolImperioHoe, ItemToolZivicioHoe, ItemArmorAccioHelmet, ItemArmorAccioChestplate,
-				ItemArmorAccioLeggings, ItemArmorAccioBoots, ItemArmorCrucioHelmet, ItemArmorCrucioChestplate,
-				ItemArmorCrucioLeggings, ItemArmorCrucioBoots, ItemArmorImperioHelmet, ItemArmorImperioChestplate,
-				ItemArmorImperioLeggings, ItemArmorImperioBoots, ItemArmorZivicioHelmet, ItemArmorZivicioChestplate,
-				ItemArmorZivicioLeggings, ItemArmorZivicioBoots);
+				ItemInfusionstoneMaster, new Item().setRegistryName("essencedye"), ArmorRegistry.ItemToolAccioHoe,
+				ArmorRegistry.ItemToolCrucioHoe, ArmorRegistry.ItemToolImperioHoe, ArmorRegistry.ItemToolZivicioHoe,
+				ArmorRegistry.ItemArmorAccioHelmet, ArmorRegistry.ItemArmorAccioChestplate,
+				ArmorRegistry.ItemArmorAccioLeggings, ArmorRegistry.ItemArmorAccioBoots,
+				ArmorRegistry.ItemArmorCrucioHelmet, ArmorRegistry.ItemArmorCrucioChestplate,
+				ArmorRegistry.ItemArmorCrucioLeggings, ArmorRegistry.ItemArmorCrucioBoots,
+				ArmorRegistry.ItemArmorImperioHelmet, ArmorRegistry.ItemArmorImperioChestplate,
+				ArmorRegistry.ItemArmorImperioLeggings, ArmorRegistry.ItemArmorImperioBoots,
+				ArmorRegistry.ItemArmorZivicioHelmet, ArmorRegistry.ItemArmorZivicioChestplate,
+				ArmorRegistry.ItemArmorZivicioLeggings, ArmorRegistry.ItemArmorZivicioBoots,
+				ArmorRegistry.ItemArmorZivicioHelmetFeed, ArmorRegistry.ItemArmorZivicioHelmetNight,
+				ArmorRegistry.ItemArmorZivicioHelmetWater, ArmorRegistry.ItemArmorZivicioChestplateFire,
+				ArmorRegistry.ItemArmorZivicioChestplatePoison, ArmorRegistry.ItemArmorZivicioChestplateWither,
+				ArmorRegistry.ItemArmorZivicioLeggingsBlind, ArmorRegistry.ItemArmorZivicioLeggingsConfusion,
+				ArmorRegistry.ItemArmorZivicioLeggingsWeak, ArmorRegistry.ItemArmorZivicioBootsJump,
+				ArmorRegistry.ItemArmorZivicioBootsSpeed, ArmorRegistry.ItemArmorZivicioBootsStep);
 	}
 
 	@SubscribeEvent
@@ -357,30 +270,45 @@ public class ModItems {
 
 		registerRender(ItemOreMinicio);
 
-		registerRender(ItemToolAccioHoe);
-		registerRender(ItemToolCrucioHoe);
-		registerRender(ItemToolImperioHoe);
-		registerRender(ItemToolZivicioHoe);
+		registerRender(ArmorRegistry.ItemToolAccioHoe);
+		registerRender(ArmorRegistry.ItemToolCrucioHoe);
+		registerRender(ArmorRegistry.ItemToolImperioHoe);
+		registerRender(ArmorRegistry.ItemToolZivicioHoe);
 
-		registerRender(ItemArmorAccioHelmet);
-		registerRender(ItemArmorAccioChestplate);
-		registerRender(ItemArmorAccioLeggings);
-		registerRender(ItemArmorAccioBoots);
+		registerRender(ArmorRegistry.ItemArmorAccioHelmet);
+		registerRender(ArmorRegistry.ItemArmorAccioChestplate);
+		registerRender(ArmorRegistry.ItemArmorAccioLeggings);
+		registerRender(ArmorRegistry.ItemArmorAccioBoots);
 
-		registerRender(ItemArmorCrucioHelmet);
-		registerRender(ItemArmorCrucioChestplate);
-		registerRender(ItemArmorCrucioLeggings);
-		registerRender(ItemArmorCrucioBoots);
+		registerRender(ArmorRegistry.ItemArmorCrucioHelmet);
+		registerRender(ArmorRegistry.ItemArmorCrucioChestplate);
+		registerRender(ArmorRegistry.ItemArmorCrucioLeggings);
+		registerRender(ArmorRegistry.ItemArmorCrucioBoots);
+
+		registerRender(ArmorRegistry.ItemArmorImperioHelmet);
+		registerRender(ArmorRegistry.ItemArmorImperioChestplate);
+		registerRender(ArmorRegistry.ItemArmorImperioLeggings);
+		registerRender(ArmorRegistry.ItemArmorImperioBoots);
+
+		registerRender(ArmorRegistry.ItemArmorZivicioHelmet);
+		registerRender(ArmorRegistry.ItemArmorZivicioChestplate);
+		registerRender(ArmorRegistry.ItemArmorZivicioLeggings);
+		registerRender(ArmorRegistry.ItemArmorZivicioBoots);
 		
-		registerRender(ItemArmorImperioHelmet);
-		registerRender(ItemArmorImperioChestplate);
-		registerRender(ItemArmorImperioLeggings);
-		registerRender(ItemArmorImperioBoots);
+		registerRender(ArmorRegistry.ItemArmorZivicioHelmetFeed);
+		registerRender(ArmorRegistry.ItemArmorZivicioChestplateFire);
+		registerRender(ArmorRegistry.ItemArmorZivicioLeggingsBlind);
+		registerRender(ArmorRegistry.ItemArmorZivicioBootsJump);
+
+		registerRender(ArmorRegistry.ItemArmorZivicioHelmetNight);
+		registerRender(ArmorRegistry.ItemArmorZivicioChestplatePoison);
+		registerRender(ArmorRegistry.ItemArmorZivicioLeggingsConfusion);
+		registerRender(ArmorRegistry.ItemArmorZivicioBootsSpeed);
 		
-		registerRender(ItemArmorZivicioHelmet);
-		registerRender(ItemArmorZivicioChestplate);
-		registerRender(ItemArmorZivicioLeggings);
-		registerRender(ItemArmorZivicioBoots);
+		registerRender(ArmorRegistry.ItemArmorZivicioHelmetWater);
+		registerRender(ArmorRegistry.ItemArmorZivicioChestplateWither);
+		registerRender(ArmorRegistry.ItemArmorZivicioLeggingsWeak);
+		registerRender(ArmorRegistry.ItemArmorZivicioBootsStep);
 	}
 
 	private static void registerRender(Item item) {

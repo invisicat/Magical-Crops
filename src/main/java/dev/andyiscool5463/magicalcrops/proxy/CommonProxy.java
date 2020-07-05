@@ -3,6 +3,7 @@ package dev.andyiscool5463.magicalcrops.proxy;
 import dev.andyiscool5463.magicalcrops.MagicalCropsCore;
 import dev.andyiscool5463.magicalcrops.Reference;
 import dev.andyiscool5463.magicalcrops.TutorialGuiHandler;
+import dev.andyiscool5463.magicalcrops.gen.OreGen;
 import dev.andyiscool5463.magicalcrops.init.ModBlocks;
 import dev.andyiscool5463.magicalcrops.init.ModItems;
 import net.minecraft.item.Item;
@@ -11,6 +12,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class CommonProxy {
 
@@ -18,13 +20,13 @@ public class CommonProxy {
 	
 		ModItems.init();
 		ModBlocks.init();
-		
+
 	}
 	
 	// Init - Do your mod setup. Build whatever data structures you care aboutandler
 	public void init(FMLInitializationEvent event) {
 		NetworkRegistry.INSTANCE.registerGuiHandler(Reference.MOD_ID, new TutorialGuiHandler());
-
+		GameRegistry.registerWorldGenerator(new OreGen(), 0);
 	}
 	
 	

@@ -2,6 +2,7 @@ package dev.andyiscool5463.magicalcrops.events;
 
 import dev.andyiscool5463.magicalcrops.init.ModBlocks;
 import dev.andyiscool5463.magicalcrops.init.ModItems;
+import dev.andyiscool5463.magicalcrops.registry.ArmorRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
@@ -17,22 +18,22 @@ public class MinicioCropBreak {
 		if (event.getHarvester() != null && event.getHarvester().getHeldItemMainhand() != null
 				&& event.getState().getBlock() == MinicioCrop
 				&& event.getState().getBlock().getMetaFromState(event.getState()) == 7) {
-			if (event.getHarvester().getHeldItemMainhand().getItem() == ModItems.ItemToolAccioHoe) {
+			if (event.getHarvester().getHeldItemMainhand().getItem() == ArmorRegistry.ItemToolAccioHoe) {
 				event.getHarvester().getHeldItemMainhand().setItemDamage(1);
 				event.getDrops().add(new ItemStack(ModItems.ItemEssenceMinicio, 1));
 			}
 
-			if (event.getHarvester().getHeldItemMainhand().getItem() == ModItems.ItemToolCrucioHoe) {
+			if (event.getHarvester().getHeldItemMainhand().getItem() == ArmorRegistry.ItemToolCrucioHoe) {
 				event.getHarvester().getHeldItemMainhand().setItemDamage(1);
 				event.getDrops().add(new ItemStack(ModItems.ItemEssenceMinicio, 2));
 			}
 
-			if (event.getHarvester().getHeldItemMainhand().getItem() == ModItems.ItemToolImperioHoe) {
+			if (event.getHarvester().getHeldItemMainhand().getItem() == ArmorRegistry.ItemToolImperioHoe) {
 				event.getHarvester().getHeldItemMainhand().setItemDamage(1);
 				event.getDrops().add(new ItemStack(ModItems.ItemEssenceMinicio, 4));
 			}
 
-			if (event.getHarvester().getHeldItemMainhand().getItem() == ModItems.ItemToolZivicioHoe) {
+			if (event.getHarvester().getHeldItemMainhand().getItem() == ArmorRegistry.ItemToolZivicioHoe) {
 				event.getDrops().add(new ItemStack(ModItems.ItemEssenceMinicio, 8));
 			}
 		}

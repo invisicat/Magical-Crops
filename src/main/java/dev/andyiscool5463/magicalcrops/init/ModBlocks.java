@@ -56,7 +56,7 @@ public class ModBlocks {
 	public static Block BlockCropWater;
 	public static Block BlockCropWither;
 	
-	static Block BlockOreMinicio;
+	public static Block BlockOreMinicio;
 	
 	public static Block BLOCK_FURNACE        = new BlockFurnaceAccio(ModItems.CreativeTab);
 	public static Block blockFurnaceCrucio   = new BlockFurnaceCrucio(ModItems.CreativeTab); 

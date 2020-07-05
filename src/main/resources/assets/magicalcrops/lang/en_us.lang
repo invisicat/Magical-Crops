@@ -20,6 +20,7 @@ item.seedredstone.name=Redstone Seeds
 item.seedglowstone.name=Glowstone Seeds
 item.seedexperience.name=Experience Seeds
 item.seedwater.name=Water Seeds
+item.seedwither.name=Wither Seeds
 
 item.essence_ore.name=Essence Ore
 item.essence_air.name=Air Essence
@@ -46,11 +47,79 @@ item.essence_redstone.name=Redstone Essence
 item.essence_glowstone.name=Glowstone Essence
 item.essence_experience.name=Experience Essence
 
-
 item.infusionstone_weak.name=Weak Infusionstone
 item.infusionstone_regular.name=Regular Infusionstone
 item.infusionstone_strong.name=Strong Infusionstone
 item.infusionstone_extreme.name=Extreme Infusionstone
 item.infusionstone_master.name=Master Infusionstone
 
+item.tools_accio_hoe.name=Accio Hoe
+item.tools_crucio_hoe.name=Crucio Hoe
+item.tools_imperio_hoe.name=Imperio Hoe
+item.tools_zivicio_hoe.name=Zivicio Hoe
+
+item.tools_accio_pickaxe.name=Accio Pickaxe
+item.tools_crucio_pickaxe.name=Crucio Pickaxe
+item.tools_imperio_pickaxe.name=Imperio Pickaxe
+item.tools_zivicio_pickaxe.name=Zivicio Pickaxe
+
+item.tools_accio_sword.name=Accio Sword
+item.tools_crucio_sword.name=Crucio Sword
+item.tools_imperio_sword.name=Imperio Sword
+item.tools_zivicio_sword.name=Zivicio Sword
+
+item.tools_accio_axe.name=Accio Axe
+item.tools_crucio_axe.name=Crucio Axe
+item.tools_imperio_axe.name=Imperio Axe
+item.tools_zivicio_axe.name=Zivicio Axe
+
+item.armour_accio_helmet.name=Accio Helmet
+item.armour_accio_chestplate.name=Accio Chestplate
+item.armour_accio_leggings.name=Accio Leggings
+item.armour_accio_boots.name=Accio Boots
+
+item.armour_crucio_helmet.name=Crucio Helmet
+item.armour_crucio_chestplate.name=Crucio  Chestplate
+item.armour_crucio_leggings.name=Crucio Leggings
+item.armour_crucio_boots.name=Crucio Boots
+
+item.armour_imperio_helmet.name=Imperio Helmet
+item.armour_imperio_chestplate.name=Imperio Chestplate
+item.armour_imperio_leggings.name=Imperio Leggings
+item.armour_imperio_boots.name=Imperio Boots
+
+
+item.armour_zivicio_helmet.name=Zivicio Helmet
+item.armour_zivicio_chestplate.name=Zivicio Chestplate
+item.armour_zivicio_leggings.name=Zivicio Leggings
+item.armour_zivivio_boots.name=Zivicio Boots
+
+item.armour_zivicio_helmet_feed.name=Zivicio Helmet | Feed
+item.armour_zivicio_helmet_night.name=Zivicio Helmet | Nightvision
+item.armour_zivicio_helmet_water.name=Zivicio Helmet | Aqua
+
+item.armour_zivicio_chestplate_fire.name= Zivicio Chestplate | Fire
+item.armour_zivicio_chestplate_poison.name= Zivicio Chestplate | Poison
+item.armour_zivicio_chestplate_wither.name= Zivicio Chestplate | Wither
+
+item.armour_zivicio_leggings_blind.name= Zivicio Leggings | Blindness
+item.armour_zivicio_leggings_confusion.name= Zivicio Leggings | Confusion
+item.armour_zivicio_leggings_weak.name= Zivicio Leggings | Weakness
+
+item.armour_zivicio_boots_jump.name= Zivicio Leggings | Bunny
+item.armour_zivicio_boots_speed.name= Zivicio Leggings | Usain Bolt
+item.armour_zivicio_boots_step.name= Zivicio Leggings | Step
+
 container.furnace_accio=Accio Furnace
+container.furnace_crucio=Crucio Furnace
+container.furnace_imperio=Imperio Furnace
+container.furnace_zivicio=Zivicio Furnace
+container.furnace_ultimate=Ultimate Furnace
+
+tile.furnace_accio.name=Accio Furnace
+tile.furnace_crucio.name=Crucio Furnace
+tile.furnace_imperio.name=Imperio Furnace
+tile.furnace_zivicio.name=Zivicio Furnace
+tile.furnace_ultimate.name=Ultimate Furnace
+
+tile.essenceore.name=Essence Ore
