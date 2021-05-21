@@ -44,6 +44,7 @@ public class OreGen implements IWorldGenerator {
             int x = chunk_X * 16 +rand.nextInt(16);
             int y = minHeight + rand.nextInt(heightdiff);
             int z = chunk_Z * 16 + rand.nextInt(16);
+            // Andy is a monkey
 
             generator.generate(world, rand, new BlockPos(x, y, z));
         }
